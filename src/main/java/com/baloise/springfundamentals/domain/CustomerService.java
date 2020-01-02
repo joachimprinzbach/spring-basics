@@ -1,7 +1,10 @@
 package com.baloise.springfundamentals.domain;
 
 import com.baloise.springfundamentals.infrastructure.CustomerLoader;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
+@Component
 public class CustomerService {
 
     private static final String DEACTIVATION_MESSAGE = "Your customer account has been successfully removed";
@@ -9,6 +12,7 @@ public class CustomerService {
     private final EmailService emailService;
     private final PostalService postalService;
 
+    @Autowired
     public CustomerService(CustomerLoader customerLoader, EmailService emailService, PostalService postalService) {
         this.customerLoader = customerLoader;
         this.emailService = emailService;

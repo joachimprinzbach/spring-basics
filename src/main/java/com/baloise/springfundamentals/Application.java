@@ -1,21 +1,16 @@
 package com.baloise.springfundamentals;
 
 import com.baloise.springfundamentals.api.CustomerController;
-import com.baloise.springfundamentals.domain.CustomerService;
-import com.baloise.springfundamentals.domain.EmailService;
-import com.baloise.springfundamentals.domain.PostalService;
-import com.baloise.springfundamentals.infrastructure.CustomerLoader;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.annotation.ComponentScan;
 
+@ComponentScan("com.baloise.springfundamentals")
 public class Application {
 
     public static void main(String[] args) {
-        CustomerLoader customerLoader = new CustomerLoader();
-        EmailService emailService = new EmailService();
-        PostalService postalService = new PostalService();
-        CustomerService customerService = new CustomerService(customerLoader, emailService, postalService);
-
-        CustomerController customerController = new CustomerController(customerService);
-
+        ApplicationContext applicationContext = new AnnotationConfigApplicationContext(Application.class);
+        CustomerController customerController = applicationContext.getBean(CustomerController.class);
         customerController.deactivateCustomerAccount("1");
     }
 
