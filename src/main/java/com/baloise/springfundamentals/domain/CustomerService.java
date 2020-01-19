@@ -2,9 +2,9 @@ package com.baloise.springfundamentals.domain;
 
 import com.baloise.springfundamentals.infrastructure.CustomerLoader;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
-@Component
+@Service
 public class CustomerService {
 
     private static final String DEACTIVATION_MESSAGE = "Your customer account has been successfully removed";

@@ -1,8 +1,8 @@
 package com.baloise.springfundamentals.domain;
 
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
-@Component
+@Service
 public class PostalService {
 
     public void sendLetter(MailingAddress mailingAddress, String message) {
