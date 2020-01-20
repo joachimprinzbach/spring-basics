@@ -16,6 +16,8 @@ target/
 ### IntelliJ IDEA ###
 .idea/workspace.xml
 .idea/gradle.xml
+.idea/modules.xml
+.idea/artifacts
 *.iws
 *.iml
 *.ipr

@@ -2,11 +2,12 @@ package com.baloise.springfundamentals.infrastructure;
 
 import com.baloise.springfundamentals.domain.Customer;
 import com.baloise.springfundamentals.domain.MailingAddress;
+import org.springframework.context.annotation.Primary;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Repository;
 
 @Repository
-@Profile("default")
+@Primary
 public class MockCustomerLoader implements CustomerLoader {
 
     @Override
