@@ -14,7 +14,8 @@ target/
 .sts4-cache
 
 ### IntelliJ IDEA ###
-.idea
+.idea/workspace.xml
+.idea/gradle.xml
 *.iws
 *.iml
 *.ipr
@@ -29,3 +30,4 @@ build/
 
 ### VS Code ###
 .vscode/
+

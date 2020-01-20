@@ -10,10 +10,6 @@ public class CustomerController {
 
     private final CustomerService customerService;
 
-    String s = "{\n" +
-            "  \"test\": \"Json\"\n" +
-            "}";
-
     @Autowired
     public CustomerController(CustomerService customerService) {
         this.customerService = customerService;
