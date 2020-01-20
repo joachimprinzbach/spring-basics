@@ -1,6 +1,7 @@
 package com.baloise.springfundamentals.domain;
 
 import com.baloise.springfundamentals.infrastructure.CustomerLoader;
+import com.baloise.springfundamentals.othersystemjarcontent.CRMSystemCustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,16 +12,19 @@ public class CustomerService {
     private final CustomerLoader customerLoader;
     private final EmailService emailService;
     private final PostalService postalService;
+    private final CRMSystemCustomerService crmSystemCustomerService;
 
     @Autowired
-    public CustomerService(CustomerLoader customerLoader, EmailService emailService, PostalService postalService) {
+    public CustomerService(CustomerLoader customerLoader, EmailService emailService, PostalService postalService, CRMSystemCustomerService crmSystemCustomerService) {
         this.customerLoader = customerLoader;
         this.emailService = emailService;
         this.postalService = postalService;
+        this.crmSystemCustomerService = crmSystemCustomerService;
     }
 
     public void deactivateCustomer(String customerId) {
         Customer customer = customerLoader.findById(customerId);
+        crmSystemCustomerService.callMe();
 
         if (customer.hasEmailAddress()) {
             String emailAddress = customer.getEmailAddress();
