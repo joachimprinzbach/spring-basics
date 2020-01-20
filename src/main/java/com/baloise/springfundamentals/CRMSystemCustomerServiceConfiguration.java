@@ -19,11 +19,6 @@ public class CRMSystemCustomerServiceConfiguration {
     @Bean
     @Profile({"mock", "default"})
     public CRMSystemCustomerService getCRMCustomerServiceMock() {
-        return new CRMSystemCustomerService() {
-            @Override
-            public void callMe() {
-                System.out.println("Local Mock");
-            }
-        };
+        return () -> System.out.println("Local Mock");
     }
 }
