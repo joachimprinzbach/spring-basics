@@ -17,6 +17,9 @@ target/
 .idea/workspace.xml
 .idea/gradle.xml
 .idea/modules.xml
+.idea/libraries
+.idea/jarRepositories.xml
+.idea/.name
 .idea/artifacts
 *.iws
 *.iml

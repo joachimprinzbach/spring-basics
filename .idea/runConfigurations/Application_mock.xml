@@ -1,7 +1,7 @@
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="Application mock" type="Application" factoryName="Application">
     <option name="MAIN_CLASS_NAME" value="com.baloise.springfundamentals.Application" />
-    <module name="spring-basics" />
+    <module name="demo" />
     <option name="VM_PARAMETERS" value="-Dspring.profiles.active=mock" />
     <extension name="coverage">
       <pattern>
